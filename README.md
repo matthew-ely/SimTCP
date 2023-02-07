@@ -80,14 +80,14 @@ also reproduced below.
 
 
 For example, to see how your solution performs when transmitting a text file,
-with a 5% loss rate, and with a latency of 100ms, you could use the following:
+with a 30% loss rate, and with a latency of 300ms, you could use the following:
 `python3 tester.py --file test_data.txt --loss 0.3 --delay 0.3 --buffer 10 --verbose`.
 
 
 ### Hints and Suggestions
 
  * A key part of this project is determining how long to wait before resending
-   a packet.  You should estimate this timeout value using the EWMA technique
+   a packet.  You should estimate this timeout value using the EWMA (exponentially weighted moving average) technique
    for estimating the RTT, and use this in determining your timeout. With
    correctly tuned timeouts, lower RTT will result in higher throughput.
 
