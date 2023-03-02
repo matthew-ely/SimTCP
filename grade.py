@@ -1,3 +1,6 @@
+# MATT ELY's COPY, NOT COURSE COPY AS OF 3/2/23
+# ONLY LINE 109 MODIFIED TO WORK ON WINDOWS POWERSHELL
+
 #!/usr/bin/env python3
 import os
 import signal
@@ -96,9 +99,15 @@ for CASE_NUM, A_CASE in enumerate(TEST_CASES):
     print("  - Full credit: {} secs".format(round(FULL_CREDIT_TIME)))
     print("  - Half credit: {} secs".format(round(HALF_CREDIT_TIME)))
     print("----------")
-
+ 
     port = 9999
-    process = Popen(["lsof", "-i", ":{0}".format(port)], stdout=PIPE, stderr=PIPE)
+
+    # FOR TERMINAL SHELL
+    # process = Popen(["lsof", "-i", ":{0}".format(port)], stdout=PIPE, stderr=PIPE)
+
+    # FOR WINDOWS POWERSHELL
+    process = Popen(["netstat", "-b", ":{0}".format(port)], stdout=PIPE, stderr=PIPE)
+
     stdout, stderr = process.communicate()
     for process in str(stdout.decode("utf-8")).split("\n")[1:]:
         data = [x for x in process.split(" ") if x != '']

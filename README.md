@@ -1,3 +1,13 @@
+## STUDENT README COPY
+This repo was forked from: https://github.com/SongClass/SimTCP
+All student modifications include:
+- This README - just 'STUDENT README COPY' section
+- project.py - send() and recv() methods for the project
+- grade.py - process declaration modified to work with Windows Powershell
+
+This project was completed for CSEE 4140 Spring 2023 at The University of Georgia
+Project completion date: 3/2/23
+
 ## Project: Reliable Communication
 
 In this project, you will implement reliable communication over an unreliable
